@@ -1,0 +1,56 @@
+<div class="flex flex-col gap-4 p-6 max-w-3xl mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h1 class="text-3xl font-bold text-gray-800">Customer List</h1>
+        <button
+            class="bg-blue-600 hover:bg-blue-700 transition text-white py-2 px-6 rounded shadow w-full sm:w-auto"
+            [routerLink]="'/create'"
+        >
+            <mat-icon class="mr-2 align-middle">person_add</mat-icon>
+            Create Customer
+        </button>
+    </div>
+
+    <div *ngIf="customers?.length; else noCustomers">
+        <div
+            *ngFor="let customer of customers"
+            class="shadow rounded-lg p-4 my-2 flex flex-col sm:flex-row items-start sm:items-center bg-white hover:shadow-lg transition"
+        >
+            <div class="mb-2 sm:mb-0 flex-1">
+                <span class="block font-semibold text-lg text-gray-900">{{ customer.name }}</span>
+                <span class="block text-sm text-gray-600">{{ customer.email }}</span>
+                <span class="block text-sm text-gray-600">{{ customer.phone }}</span>
+            </div>
+            <div class="flex gap-2 sm:ms-auto">
+                <button
+                    mat-icon-button
+                    color="primary"
+                    [routerLink]="['/edit/' + customer._id]"
+                    matTooltip="Edit"
+                >
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                    mat-icon-button
+                    color="accent"
+                    [routerLink]="['/details/' + customer._id]"
+                    matTooltip="View Details"
+                >
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button
+                    mat-icon-button
+                    class="cancel"
+                    (click)="onDeleteCustomer(customer)"
+                    matTooltip="Delete"
+                >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <ng-template #noCustomers>
+        <div class="text-center text-gray-500 py-8">
+            No customers found. Click "Create Customer" to add one.
+        </div>
+    </ng-template>
+</div>
