@@ -3,6 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const Customer = require('../models/Customer');
+const port = process.env.PORT || 4000;
 
 // GET: list
 router.get('/', async (req, res) => {
