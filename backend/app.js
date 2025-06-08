@@ -21,15 +21,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.listen(PORT, (error) => {
-    if (!error) {
-        console.log("Server is successfully listening to port:", PORT);
-    }
-    else {
-        console.log("an error occured", error);
-    }
-});
-
 main().catch((error) => console.error(error));
 
 async function main() {
@@ -38,3 +29,5 @@ async function main() {
     await mongoose.connect(connectionString);
     mongoose.set('strictQuery', true);
 }
+
+module.exports = app;f

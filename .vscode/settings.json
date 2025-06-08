@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e12d4eff-7a38-433f-98f0-b067bec1340e/resourceGroups/cm-mean/providers/Microsoft.Web/sites/cm-mean",
+    "appService.deploySubpath": "backend"
+}
