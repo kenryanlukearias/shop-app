@@ -8,24 +8,6 @@ import { LandingComponent } from './langing-page/landing/landing.component';
 
 export const routes: Routes = [
     
-    // {
-    //     path: '',
-    //     loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
-    // },
-    // {
-    //     path: '',
-    //     loadChildren: () => import('./langing-page/langing-page.module').then(m => m.LangingPageModule)
-    // },
-    // {
-    //     path: 'home',
-    //     component: LandingComponent
-    // },
-    // {
-    //     path: '',
-    //     redirectTo: 'home',
-    //     pathMatch: 'full'
-    // }
-    
     {
         path: '',
         component: CustomerListComponent
